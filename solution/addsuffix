@@ -1,0 +1,10 @@
+#!/bin/bash
+suffix=$1
+flag=1
+for filename in "$@"; do
+	if (("$flag")); then
+		flag=0
+	else
+		mv "$filename" "$filename$suffix"
+	fi
+done
